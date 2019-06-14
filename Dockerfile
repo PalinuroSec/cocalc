@@ -16,7 +16,7 @@ RUN curl https://repository.vscodium.com/pub.gpg > /etc/apt/trusted.gpg.d/vscodi
 RUN apt-get update;apt-get -y install apt-transport-https; apt-get -y dist-upgrade ; rm -rf /var/lib/apt/lists/*
 
 # Install additional software
-RUN apt-get update; apt-get -y install codium dbeaver-ce avogadro emacs krita gimp scilab sqlitebrowser mysql-workbench gmysqlcc; rm -rf /var/lib/apt/lists/*
+RUN apt-get update; apt-get -y install codium dbeaver-ce avogadro emacs krita gimp scilab geogebra sqlitebrowser mysql-workbench gmysqlcc default-jdk ; rm -rf /var/lib/apt/lists/*
 
 #Start CoCalc
 
