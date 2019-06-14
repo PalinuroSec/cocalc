@@ -7,8 +7,8 @@ ENV VERSION 0.1
 RUN rm /etc/apt/sources.list.d/vscode.list; rm /etc/apt/trusted.gpg.d/microsoft.gpg /microsoft.gpg; apt-get -y remove code
 
 # Add useful repos
-RUN curl https://repository.vscodium.com/pub.gpg > /etc/apt/trusted.gpg.d/vscodium.gpg; \
-    curl https://dbeaver.io/debs/dbeaver.gpg.key > /etc/apt/trusted.gpg.d/dbeaver.gpg \
+RUN curl https://repository.vscodium.com/pub.gpg | gpg --dearmor > /etc/apt/trusted.gpg.d/vscodium.gpg; \
+    curl https://dbeaver.io/debs/dbeaver.gpg.key | gpg --dearmor > /etc/apt/trusted.gpg.d/dbeaver.gpg \
     echo 'deb https://repository.vscodium.com/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list \
     echo "deb https://dbeaver.io/debs/dbeaver-ce /" | sudo tee /etc/apt/sources.list.d/dbeaver.list
 
